@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search</title>
+    <style>
+        ul{
+            list-style-type: none;
+            display: flex;
+            gap: 10px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="./Home.html">Home</a></li>
+            <li><a href="./Signup.html">Sign up</a></li>
+            <li><a href="./Login.html">Login</a></li>
+            <li><a href="./Search.html">Search</a></li>
+        </ul>
+    </nav>
+    <form action="/submit_search" method="get">
+        <h1>Search</h1>
+        <label for="search">Search:</label>
+        <input type="search" name="search" id="search" required>
+        <input type="submit" value="Search">
+    </form>
+</body>
+</html>
