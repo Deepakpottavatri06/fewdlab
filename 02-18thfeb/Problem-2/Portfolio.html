@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Deepak Pottavatri</title>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --secondary: #9e6ef0;
+            --accent: #f97316;
+            --dark: #1e293b;
+            --light: #f8fafc;
+            --gradient: linear-gradient(135deg, #2563eb 0%, #9055f5 100%);
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--light);
+        }
+
+        header h1 {
+            background: var(--gradient);
+            padding: 3rem 2rem;
+            text-align: center;
+            color: white;
+            margin: 0;
+            font-size: 2.8rem;
+            letter-spacing: -0.5px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        nav {
+            background-color: white;
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        nav ul {
+            list-style-type: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 600;
+            padding: 8px 16px;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+        }
+
+        nav a:hover {
+            background: var(--gradient);
+            color: white;
+            transform: translateY(-1px);
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        section {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(37, 99, 235, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        section:hover {
+            transform: translateY(-5px);
+        }
+
+        h2 {
+            color: var(--primary);
+            font-size: 1.8rem;
+            margin-top: 0;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            height: 3px;
+            width: 60px;
+            background: var(--gradient);
+            border-radius: 2px;
+        }
+
+        h3 {
+            color: var(--secondary);
+            margin: 1rem 0;
+            font-size: 1.4rem;
+        }
+
+        /* Projects Section */
+        #projects li {
+            background: linear-gradient(to right, white, #f8fafc);
+            padding: 2rem;
+            border-radius: 12px;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--accent);
+            box-shadow: 2px 6px rgba(0, 0, 0, 0.05);
+
+        }
+
+        /* Contact Section */
+        #contact a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        #contact a:hover {
+            color: var(--secondary);
+        }
+
+        #feedback form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            padding: 2rem;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(37, 99, 235, 0.1);
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        #feedback label {
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        #feedback input[type="text"],
+        #feedback input[type="email"],
+        #feedback textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            background-color: white;
+            outline: none;
+        }
+
+        /* Feedback Form */
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            background-color: white;
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+
+        input[type="submit"] {
+            background: var(--gradient);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+
+        td {
+            padding: 1rem;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        td:first-child {
+            font-weight: 600;
+            width: 200px;
+            color: var(--primary);
+        }
+
+        /* Skills section specific */
+        #skills td:last-child {
+            color: #4b5563;
+        }
+
+        /* Education section specific */
+        #education li {
+            margin-bottom: 0.5rem;
+            color: #4b5563;
+        }
+
+        /* Achievements section specific */
+        #achievements li {
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        #achievements li::before {
+            content: '•';
+            color: var(--accent);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        /* Smooth Scroll Behavior */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header h1 {
+                padding: 2rem 1rem;
+                font-size: 2.2rem;
+            }
+
+            nav {
+                padding: 0.5rem;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            nav a {
+                display: block;
+                text-align: center;
+            }
+
+            main {
+                padding: 1rem;
+            }
+
+            section {
+                padding: 1.5rem;
+            }
+
+            td {
+                display: block;
+                width: 100%;
+            }
+
+            td:first-child {
+                background-color: #f8fafc;
+                padding: 0.5rem 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Deepak Pottavatri</h1>
+        <nav>
+            <ul>
+                <li><a href="#self">Self Introduction</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#achievements">Achievements</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="self">
+            <h2>Self Introduction</h2>
+            <div id="self-content"></div>
+        </section>
+
+        <section id="skills">
+            <h2>Skills</h2>
+        </section>
+
+        <section id="projects">
+            <h2>Projects</h2>
+        </section>
+
+        <section id="achievements">
+            <h2>Achievements</h2>
+        </section>
+
+        <section id="education">
+            <h2>Education</h2>
+        </section>
+
+        <section id="contact">
+            <h2>Contact</h2>
+        </section>
+
+        <section id="feedback">
+            <h2>Feedback</h2>
+            <form action="feedback.php" method="post">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="feedback">Feedback:</label>
+                <textarea id="feedback" name="feedback" required></textarea>
+
+                <input type="submit" value="Submit">
+            </form>
+        </section>
+    </main>
+
+    <script>
+        const data = {
+            self: "I'm a Full-Stack web developer with a good foundation in Data Structures and Algorithms (DSA) honed through C++ and Java.",
+            skills: {
+                languages: ["Java", "Python", "C/C++"],
+                webTechnologies: ["HTML", "CSS", "JavaScript"],
+                databases: ["MongoDB", "MySQL"],
+                frameworksLibraries: ["Pandas", "Numpy", "Flask", "SKLearn", "NodeJS", "ExpressJS", "ReactJS", "Bootstrap", "Flutter"],
+                toolsPlatforms: ["Visual Studio Code", "Git", "GitHub", "Google Cloud", "Figma", "Canva", "PostMan", "Vercel", "Render", "Jupyter Notebook"],
+                operatingSystems: ["Windows", "Linux"]
+            },
+            projects: [
+                {
+                    name: "Tech for Autism and Dyslexia",
+                    technologies: ["MERN", "PixiJs"],
+                    status: "In Progress",
+                    description: "Leading the development of interactive games for children with Autism and Dyslexia. Built a website for parents, therapists, doctors, and centers to view and manage children's reports, successfully digitizing 95% of handwritten reports and game data, enhancing report accessibility and management.",
+                    link: "#"
+                },
+                {
+                    name: "Tires on Highways",
+                    technologies: ["MERN", "ML"],
+                    description: "A web application analyzes tire conditions through images captured at toll plazas, achieving good accuracy in detecting worn-out or unsafe tires. It alerts vehicle owners via SMS, contributing to improved road safety.",
+                    link: "#"
+                }
+            ],
+            achievements: [
+                "Completed Google Cloud Study Jams and Generative AI course under Google Developer Student Clubs.",
+                "Contributed to open source in GirlScript Summer of Code 2024.",
+                "Certified as a Postman API Fundamentals Student Expert."
+            ],
+            education: [
+                {
+                    degree: "Bachelor of Technology",
+                    field: "Computer Science and Engineering",
+                    institution: "Keshav Memorial Institute of Technology, Hyderabad",
+                    year: "2022 - PRESENT",
+                    cgpa: "9.34/10"
+                },
+                {
+                    level: "Class-12",
+                    institution: "Sarath Junior College",
+                    board: "Telangana State Board of Intermediate Education",
+                    year: "May 2022",
+                    marks: "970/1000"
+                },
+                {
+                    level: "Class-10",
+                    institution: "St. Mary High School",
+                    board: "Board of Secondary Education, Telangana State",
+                    year: "March 2020",
+                    cgpa: "10/10"
+                }
+            ],
+            contact: {
+                name: "Deepak Pottavatri",
+                phone: "+91 7013524159",
+                email: "deepakpottavatri06@gmail.com",
+                location: "Hyderabad, India",
+                linkedin: "https://www.linkedin.com/in/deepak-pottavatri/",
+                github: "https://github.com/Deepakpottavatri"
+            }
+        };
+
+        function populateSection(id, content) {
+            const div = document.createElement("div");
+            div.innerHTML = content;
+            document.getElementById(id).appendChild(div);
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            populateSection("self", `<p>${data.self}</p>`);
+
+            populateSection("skills", `<table>${Object.entries(data.skills).map(([key, value]) => `<tr><td>${key}:</td><td>${value.join(", ")}</td></tr>`).join("")}</table>`);
+
+            populateSection("projects", `<ol>${data.projects.map(p => `<li><h3>${p.name}</h3><p>${p.description}</p><p><strong>Technologies:</strong> ${p.technologies.join(", ")}</p></li>`).join("")}</ol>`);
+
+            populateSection("achievements", `<ul>${data.achievements.map(a => `<li>${a}</li>`).join("")}</ul>`);
+
+            populateSection("education", data.education.map(e => `<div><h3>${e.degree || e.level}</h3><ul><li>${e.institution}</li><li><strong>Year:</strong> ${e.year}</li><li>${e.cgpa ? `<strong>CGPA:</strong> ${e.cgpa}` : `<strong>Marks:</strong> ${e.marks}`}</li></ul></div>`).join(""));
+
+            populateSection("contact", `<ul><li><strong>Name:</strong> ${data.contact.name}</li><li><strong>Phone:</strong> ${data.contact.phone}</li><li><strong>Email:</strong> <a href="mailto:${data.contact.email}">${data.contact.email}</a></li><li><strong>Location:</strong> ${data.contact.location}</li><li><a href="${data.contact.linkedin}" target="_blank">LinkedIn</a> | <a href="${data.contact.github}" target="_blank">GitHub</a></li></ul>`);
+        });
+    </script>
+</body>
+
+</html>
