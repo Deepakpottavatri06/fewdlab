@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Form</title>
+    <link rel="stylesheet" href="feedback.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Feedback Form</h2>
+        <form novalidate id="feedback">
+            <div class="form-group">
+                <label for="name">Name <span>(Optional)</span></label>
+                <input type="text" name="name" id="name" placeholder="Enter your name">
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Email <span>(Optional)</span></label>
+                <input type="email" name="email" id="email" placeholder="Enter your email">
+            </div>
+            
+            <div class="form-group">
+                <label for="phone">Phone <span>(Optional)</span></label>
+                <input type="number" name="phone" id="phone" placeholder="Enter your phone number">
+            </div>
+            
+            <div class="form-group">
+                <label for="rating">Rating</label>
+                <select name="rating" id="rating">
+                    <option value="">Select Rating</option>
+                    <option value="1">1 - Poor</option>
+                    <option value="2">2 - Fair</option>
+                    <option value="3">3 - Good</option>
+                    <option value="4">4 - Very Good</option>
+                    <option value="5">5 - Excellent</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="questions">Questions regarding product or service</label>
+                <textarea name="questions" id="questions" placeholder="Enter your questions here"></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label for="comments">Additional comments <span>(Optional)</span></label>
+                <textarea name="comments" id="comments" placeholder="Enter additional comments"></textarea>
+            </div>
+            
+            <button type="submit">Submit Feedback</button>
+        </form>
+    </div>
+    <script>
+        document.getElementById("feedback").addEventListener("submit", function(event) {
+            event.preventDefault();
+            alert("Thank you! Your feedback has been submitted successfully.");
+        });
+    </script>
+</body>
+</html>
