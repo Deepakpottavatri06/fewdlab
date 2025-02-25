@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Deepak Pottavatri</title>
+    <link href="bootstrap-5.3.3-dist/js/bootstrap.bundle.js" rel="stylesheet">
+    <link rel="stylesheet" href="./bootstrap-5.3.3-dist/css/bootstrap.min.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Deepak Pottavatri</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#self">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#skills">Skills</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#projects">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#achievements">Achievements</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#education">Education</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container py-5">
+        <section id="self" class="mb-5">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="border-bottom pb-2 mb-4">About Me</h2>
+                    <div id="self-content" class="lead"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="mb-5">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="border-bottom pb-2 mb-4">Skills</h2>
+                    <div id="skills-content" class="row"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="mb-5">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="border-bottom pb-2 mb-4">Projects</h2>
+                    <div id="projects-content" class="row"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="achievements" class="mb-5">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="border-bottom pb-2 mb-4">Achievements</h2>
+                    <div id="achievements-carousel" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner" id="achievements-content">
+                            <!-- Will be populated by JavaScript -->
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#achievements-carousel"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon bg-dark" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#achievements-carousel"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon bg-dark" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="education" class="mb-5">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="border-bottom pb-2 mb-4">Education</h2>
+                    <div class="table-responsive">
+                        <table class="table table-striped table-hover">
+                            <thead class="table-dark">
+                                <tr>
+                                    <th>Degree/Level</th>
+                                    <th>Institution</th>
+                                    <th>Year</th>
+                                    <th>Score</th>
+                                </tr>
+                            </thead>
+                            <tbody id="education-content">
+                                <!-- Will be populated by JavaScript -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="mb-5">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="border-bottom pb-2 mb-4">Contact</h2>
+                    <div id="contact-content" class="row"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="feedback" class="mb-5">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="border-bottom pb-2 mb-4">Feedback</h2>
+                    <form novalidate onsubmit="showModal" class="row g-3">
+                        <div class="col-md-6">
+                            <label for="name" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="name" name="name" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" name="email" required>
+                        </div>
+                        <div class="col-12">
+                            <label for="feedback" class="form-label">Feedback</label>
+                            <textarea class="form-control" id="feedback" name="feedback" rows="4" required></textarea>
+                        </div>
+                        <div class="col-12">
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-dark text-white py-4">
+        <div class="container text-center">
+            <p>© 2025 Deepak Pottavatri. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        const data = {
+            self: "I'm a Full-Stack web developer with a good foundation in Data Structures and Algorithms (DSA) honed through C++ and Java.",
+            skills: {
+                languages: ["Java", "Python", "C/C++"],
+                webTechnologies: ["HTML", "CSS", "JavaScript"],
+                databases: ["MongoDB", "MySQL"],
+                frameworksLibraries: ["Pandas", "Numpy", "Flask", "SKLearn", "NodeJS", "ExpressJS", "ReactJS", "Bootstrap", "Flutter"],
+                toolsPlatforms: ["Visual Studio Code", "Git", "GitHub", "Google Cloud", "Figma", "Canva", "PostMan", "Vercel", "Render", "Jupyter Notebook"],
+                operatingSystems: ["Windows", "Linux"]
+            },
+            projects: [
+                {
+                    name: "Tech for Autism and Dyslexia",
+                    technologies: ["MERN", "PixiJs"],
+                    status: "In Progress",
+                    description: "Leading the development of interactive games for children with Autism and Dyslexia. Built a website for parents, therapists, doctors, and centers to view and manage children's reports, successfully digitizing 95% of handwritten reports and game data, enhancing report accessibility and management.",
+                    link: "#"
+                },
+                {
+                    name: "Tires on Highways",
+                    technologies: ["MERN", "ML"],
+                    description: "A web application analyzes tire conditions through images captured at toll plazas, achieving good accuracy in detecting worn-out or unsafe tires. It alerts vehicle owners via SMS, contributing to improved road safety.",
+                    link: "#"
+                }
+            ],
+            achievements: [
+                "Completed Google Cloud Study Jams and Generative AI course under Google Developer Student Clubs.",
+                "Contributed to open source in GirlScript Summer of Code 2024.",
+                "Certified as a Postman API Fundamentals Student Expert."
+            ],
+            education: [
+                {
+                    degree: "Bachelor of Technology",
+                    field: "Computer Science and Engineering",
+                    institution: "Keshav Memorial Institute of Technology, Hyderabad",
+                    year: "2022 - PRESENT",
+                    cgpa: "9.34/10"
+                },
+                {
+                    level: "Class-12",
+                    institution: "Sarath Junior College",
+                    board: "Telangana State Board of Intermediate Education",
+                    year: "May 2022",
+                    marks: "970/1000"
+                },
+                {
+                    level: "Class-10",
+                    institution: "St. Mary High School",
+                    board: "Board of Secondary Education, Telangana State",
+                    year: "March 2020",
+                    cgpa: "10/10"
+                }
+            ],
+            contact: {
+                name: "Deepak Pottavatri",
+                phone: "+91 7013524159",
+                email: "deepakpottavatri06@gmail.com",
+                location: "Hyderabad, India",
+                linkedin: "https://www.linkedin.com/in/deepak-pottavatri/",
+                github: "https://github.com/Deepakpottavatri"
+            }
+        };
+
+        document.addEventListener("DOMContentLoaded", function () {
+            // Populate About section
+            document.getElementById("self-content").innerHTML = `<p>${data.self}</p>`;
+
+            const skillsContent = document.getElementById("skills-content");
+            const badgeColors = [
+                "bg-primary",    // Blue
+                "bg-success",    // Green
+                "bg-danger",     // Red
+                "bg-warning",    // Yellow
+                "bg-info",       // Light blue
+                "bg-dark"        // Dark gray
+            ];
+
+            Object.entries(data.skills).forEach(([category, skills], categoryIndex) => {
+                const skillCategory = document.createElement("div");
+                skillCategory.className = "col-md-6 mb-4";
+
+                // Get badge color for this category (cycle through colors if more categories than colors)
+                const badgeColor = badgeColors[categoryIndex % badgeColors.length];
+
+                skillCategory.innerHTML = `
+        <h4 class="text-capitalize">${category.replace(/([A-Z])/g, ' $1').trim()}</h4>
+        <div class="d-flex flex-wrap gap-2 mt-2">
+            ${skills.map(skill => `<span class="badge ${badgeColor}">${skill}</span>`).join('')}
+        </div>
+    `;
+                skillsContent.appendChild(skillCategory);
+            });
+
+            // Populate Projects section
+            const projectsContent = document.getElementById("projects-content");
+            data.projects.forEach(project => {
+                const projectCard = document.createElement("div");
+                projectCard.className = "col-lg-6 mb-4";
+                projectCard.innerHTML = `
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <h3 class="card-title">${project.name}</h3>
+                            <p class="card-text">${project.description}</p>
+                            <div class="d-flex flex-wrap gap-1 mb-2">
+                                ${project.technologies.map(tech => `<span class="badge bg-info text-dark">${tech}</span>`).join('')}
+                            </div>
+                            ${project.status ? `<span class="badge bg-warning text-dark">${project.status}</span>` : ''}
+                        </div>
+                        <div class="card-footer bg-transparent border-top-0">
+                            <a href="${project.link}" class="btn btn-outline-primary">View Project</a>
+                        </div>
+                    </div>
+                `;
+                projectsContent.appendChild(projectCard);
+            });
+
+            // Populate Achievements carousel
+            const achievementsContent = document.getElementById("achievements-content");
+            data.achievements.forEach((achievement, index) => {
+                const carouselItem = document.createElement("div");
+                carouselItem.className = `carousel-item ${index === 0 ? 'active' : ''}`;
+                carouselItem.innerHTML = `
+                    <div class="d-flex justify-content-center flex-column align-items-center bg-light p-5 rounded" style="min-height: 200px;">
+                        <img src="${(index + 1)}.png" class="d-block" alt="achievement image ${index + 1}" height="250">
+                        <p class="lead text-center mb-0">${achievement}</p>
+                    </div>
+                    `;
+                achievementsContent.appendChild(carouselItem);
+            });
+
+            // Populate Education table
+            const educationContent = document.getElementById("education-content");
+            data.education.forEach(edu => {
+                const row = document.createElement("tr");
+                row.innerHTML = `
+                    <td>${edu.degree || edu.level} ${edu.field ? `<br><small class="text-muted">${edu.field}</small>` : ''}</td>
+                    <td>${edu.institution} ${edu.board ? `<br><small class="text-muted">${edu.board}</small>` : ''}</td>
+                    <td>${edu.year}</td>
+                    <td>${edu.cgpa ? edu.cgpa : edu.marks}</td>
+                `;
+                educationContent.appendChild(row);
+            });
+
+            const contactContent = document.getElementById("contact-content");
+            contactContent.innerHTML = `
+                <div class="col-md-6 mb-4">
+                    <div class="card shadow-sm h-100">
+                        <div class="card-body">
+                            <h4 class="card-title">Contact Information</h4>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="bi bi-person-fill me-2"></i>${data.contact.name}</li>
+                                <li class="mb-2"><i class="bi bi-telephone-fill me-2"></i>${data.contact.phone}</li>
+                                <li class="mb-2"><i class="bi bi-envelope-fill me-2"></i><a href="mailto:${data.contact.email}">${data.contact.email}</a></li>
+                                <li class="mb-2"><i class="bi bi-geo-alt-fill me-2"></i>${data.contact.location}</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="card shadow-sm h-100">
+                        <div class="card-body">
+                            <h4 class="card-title">Social Media</h4>
+                            <div class="d-grid gap-2 mt-4">
+                                <a href="${data.contact.linkedin}" target="_blank" class="btn btn-outline-primary"><i class="bi bi-linkedin me-2"></i>LinkedIn</a>
+                                <a href="${data.contact.github}" target="_blank" class="btn btn-outline-dark"><i class="bi bi-github me-2"></i>GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+        });
+        // let listFeedback = [];
+        // function showModal(){
+        //     listFeedback.push({
+        //         SNo: listFeedback.length+1,
+        //         name: document.getElementById("name").value,
+        //         feedback:document.getElementById("feedback").value
+        //     });
+        // }
+    </script>
+</body>
+
+</html>
