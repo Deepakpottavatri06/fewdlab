@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - E-Commerce Store</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .product-card {
+            transition: transform 0.2s;
+        }
+
+        .product-card:hover {
+            transform: scale(1.05);
+        }
+
+        .pagination .page-item.active .page-link {
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">E-Store</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="products.html">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="gallery.html">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="partners.html">Partners</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact Us</a>
+                    </li>
+                </ul>
+                <button class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#loginModal">Login</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="bg-primary text-white text-center py-5">
+        <div class="container">
+            <h1>Our Products</h1>
+            <p class="lead">Discover Quality and Style</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container my-5">
+        <div class="row" id="productContainer">
+            <!-- Product cards will be inserted here dynamically -->
+        </div>
+
+        <!-- Pagination -->
+        <nav aria-label="Product navigation" class="mt-4">
+            <ul class="pagination justify-content-center" id="pagination">
+                <!-- Pagination buttons will be inserted here dynamically -->
+            </ul>
+        </nav>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container text-center">
+            <p>&copy; 2025 E-Store. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const products = [
+            {
+                title: "Premium Headphones",
+                description: "High-quality wireless headphones with noise cancellation.",
+                price: "$299.99",
+                image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e"
+            },
+            {
+                title: "Sport Shoes",
+                description: "Comfortable and stylish running shoes for athletes.",
+                price: "$149.99",
+                image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff"
+            },
+            {
+                title: "Smart Watch",
+                description: "Modern smartwatch with health tracking features.",
+                price: "$199.99",
+                image: "https://media.wired.com/photos/6511aab1189c419c40374c92/16:9/w_2400,h_1350,c_limit/Apple-Watch-Ultra-2-Alt-Gear.jpg"
+            },
+            {
+                title: "Digital Camera",
+                description: "Professional camera for photography enthusiasts.",
+                price: "$799.99",
+                image: "https://static1.makeuseofimages.com/wordpress/wp-content/uploads/2022/08/Better-Aspect-Ratio-Cover.jpg"
+            },
+            {
+                title: "Travel Backpack",
+                description: "Spacious backpack perfect for adventures.",
+                price: "$79.99",
+                image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIO5AG06MF0XrSmLanDb5UziYNL2R5y2YMNQ&s"
+            },
+            {
+                title: "Designer Sunglasses",
+                description: "Stylish sunglasses with UV protection.",
+                price: "$159.99",
+                image: "https://wallpaperswide.com/download/sunglasses_2-wallpaper-2560x1440.jpg"
+            },
+            {
+                title: "Gaming Laptop",
+                description: "Powerful gaming laptop with high-end specs.",
+                price: "$1,299.99",
+                image: "https://images-cdn.ubuy.co.in/65ddcb0bf7173f2ce3362279-asus-rog-16-touchscreen-gaming-laptop.jpg"
+            },
+            {
+                title: "Fitness Band",
+                description: "Track your fitness goals and activities.",
+                price: "$59.99",
+                image: "https://cdn.thewirecutter.com/wp-content/media/2023/06/fitnesstrackers-2048px-2-3.jpg?auto=webp&quality=75&width=1024"
+            },
+            {
+                title: "Wireless Speaker",
+                description: "Portable Bluetooth speaker with deep bass.",
+                price: "$99.99",
+                image: "https://m.media-amazon.com/images/I/310VW0UhGBL._AC_UF1000,1000_QL80_.jpg"
+            },
+            {
+                title: "Leather Wallet",
+                description: "Premium leather wallet with multiple slots.",
+                price: "$49.99",
+                image: "https://7bags.com.ua/wa-data/public/shop/products/38/65/66538/images/4664495/4664495.970x0@2x.jpg"
+            },
+            {
+                title: "Office Chair",
+                description: "Ergonomic office chair for maximum comfort.",
+                price: "$229.99",
+                image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVLxA8P-wu1kQDdaCboj7rJiFXgEo5pNgUPw&s"
+            },
+            {
+                title: "Smartphone",
+                description: "Latest smartphone with powerful features.",
+                price: "$999.99",
+                image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2_BeTMbeqryekd7jMJVdlNn2MQcS8tlZ71A&s"
+            }
+        ];
+
+        const itemsPerPage = 6;
+        let currentPage = 1;
+
+        function displayProducts(page) {
+            const productContainer = document.getElementById('productContainer');
+            productContainer.innerHTML = '';
+
+            const start = (page - 1) * itemsPerPage;
+            const end = start + itemsPerPage;
+            const paginatedProducts = products.slice(start, end);
+
+            paginatedProducts.forEach(product => {
+                productContainer.innerHTML += `
+                    <div class="col-md-4 mb-4">
+                        <div class="card product-card">
+                            <img src="${product.image}" class="card-img-top" alt="${product.title}">
+                            <div class="card-body">
+                                <h5 class="card-title">${product.title}</h5>
+                                <p class="card-text">${product.description}</p>
+                                <p class="product-price mb-3">${product.price}</p>
+                                <a href="#" class="btn btn-primary w-100">Add to Cart</a>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+        }
+
+        function setupPagination() {
+            const totalPages = Math.ceil(products.length / itemsPerPage);
+            const pagination = document.getElementById('pagination');
+            pagination.innerHTML = '';
+
+            // Previous Button
+            pagination.innerHTML += `
+        <li class="page-item ${currentPage === 1 ? 'disabled' : ''}">
+            <a class="page-link" href="#" onclick="changePage(currentPage - 1)">Previous</a>
+        </li>
+    `;
+
+            // Page Numbers
+            for (let i = 1; i <= totalPages; i++) {
+                pagination.innerHTML += `
+            <li class="page-item ${i === currentPage ? 'active' : ''}">
+                <a class="page-link" href="#" onclick="changePage(${i})">${i}</a>
+            </li>
+        `;
+            }
+
+            // Next Button
+            pagination.innerHTML += `
+        <li class="page-item ${currentPage === totalPages ? 'disabled' : ''}">
+            <a class="page-link" href="#" onclick="changePage(currentPage + 1)">Next</a>
+        </li>
+    `;
+        }
+
+
+        function changePage(page) {
+            currentPage = page;
+            displayProducts(page);
+            setupPagination();
+        }
+
+        // Initialize
+        displayProducts(currentPage);
+        setupPagination();
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

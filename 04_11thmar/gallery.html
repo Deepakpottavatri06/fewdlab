@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - E-Commerce Store</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightbox2@2.11.3/dist/css/lightbox.min.css">
+    <style>
+        .gallery-item {
+            display: none;
+        }
+
+        .active-page {
+            background-color: #0d6efd;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">E-Store</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="products.html">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="gallery.html">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="partners.html">Partners</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact Us</a>
+                    </li>
+                </ul>
+                <button class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#loginModal">Login</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="bg-primary text-white text-center py-5">
+        <div class="container">
+            <h1>Product Gallery</h1>
+            <p class="lead">Explore Our Collection Through Beautiful Images</p>
+        </div>
+    </header>
+
+    <!-- Filter Buttons -->
+    <div class="container my-4">
+        <div class="d-flex justify-content-center">
+            <div class="btn-group" role="group">
+                <button class="btn btn-outline-primary active" onclick="filterGallery('all')">All</button>
+                <button class="btn btn-outline-primary" onclick="filterGallery('Electronics')">Electronics</button>
+                <button class="btn btn-outline-primary" onclick="filterGallery('Fashion')">Fashion</button>
+                <button class="btn btn-outline-primary" onclick="filterGallery('Lifestyle')">Lifestyle</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Gallery Items -->
+    <div class="container">
+        <div class="row g-4" id="gallery-container">
+            <!-- Card Template -->
+            <div class="col-md-4 gallery-item" data-category="Electronics">
+                <a href="https://images.unsplash.com/photo-1505740420928-5e560c06d30e" data-lightbox="gallery">
+                    <div class="card">
+                        <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">Premium Headphones</h5>
+                            <p class="text-muted">Electronics Collection</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="col-md-4 gallery-item" data-category="Fashion">
+                <a href="https://images.unsplash.com/photo-1542291026-7eec264c27ff" data-lightbox="gallery">
+                    <div class="card">
+                        <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">Sport Shoes</h5>
+                            <p class="text-muted">Fashion Collection</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="col-md-4 gallery-item" data-category="Electronics">
+                <a href="https://images.unsplash.com/photo-1523275335684-37898b6baf30" data-lightbox="gallery">
+                    <div class="card">
+                        <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">Smart Watch</h5>
+                            <p class="text-muted">Electronics Collection</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="col-md-4 gallery-item" data-category="Electronics">
+                <a href="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f" data-lightbox="gallery">
+                    <div class="card">
+                        <img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">Camera</h5>
+                            <p class="text-muted">Electronics Collection</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="col-md-4 gallery-item" data-category="Fashion">
+                <a href="https://wallpaperswide.com/download/nike_basketball_sneakers-wallpaper-1600x900.jpg"
+                    data-lightbox="gallery">
+                    <div class="card">
+                        <img src="https://wallpaperswide.com/download/nike_basketball_sneakers-wallpaper-1600x900.jpg"
+                            class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">Designer Collection</h5>
+                            <p class="text-muted">Fashion Collection</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Card 6 -->
+            <div class="col-md-4 gallery-item" data-category="Lifestyle">
+                <a href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUe_FLqzEHcljNtzWlH7t9OMOnkTCpNM5rqA&s"
+                    data-lightbox="gallery">
+                    <div class="card">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUe_FLqzEHcljNtzWlH7t9OMOnkTCpNM5rqA&s"
+                            class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">Lifestyle Products</h5>
+                            <p class="text-muted">Lifestyle Collection</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pagination -->
+    <div class="container my-4 text-center">
+        <nav aria-label="Page navigation">
+            <ul class="pagination justify-content-center">
+                <li class="page-item">
+                    <button class="page-link" onclick="prevPage()">Previous</button>
+                </li>
+                <li class="page-item active">
+                    <span class="page-link" id="page-number">1</span>
+                </li>
+                <li class="page-item">
+                    <button class="page-link" onclick="nextPage()">Next</button>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+
+    <script>
+        let currentPage = 1;
+        const itemsPerPage = 6;
+        let currentCategory = 'all';
+
+        function showPage(page) {
+            const items = document.querySelectorAll('.gallery-item');
+            items.forEach(item => item.style.display = 'none');
+
+            let filteredItems = Array.from(items).filter(item => {
+                return currentCategory === 'all' || item.getAttribute('data-category') === currentCategory;
+            });
+
+            const startIndex = (page - 1) * itemsPerPage;
+            const endIndex = startIndex + itemsPerPage;
+            filteredItems.slice(startIndex, endIndex).forEach(item => item.style.display = 'block');
+
+            document.getElementById('page-number').textContent = page;
+
+            // Disable Previous button if on the first page
+            document.querySelector('.pagination .page-link[onclick="prevPage()"]').classList.toggle('disabled', page === 1);
+
+            // Disable Next button if on the last page
+            document.querySelector('.pagination .page-link[onclick="nextPage()"]').classList.toggle('disabled',
+                page * itemsPerPage >= filteredItems.length);
+        }
+
+
+        function nextPage() {
+            const items = document.querySelectorAll('.gallery-item');
+            const filteredItems = Array.from(items).filter(item => {
+                return currentCategory === 'all' || item.getAttribute('data-category') === currentCategory;
+            });
+
+            if (currentPage * itemsPerPage < filteredItems.length) {
+                currentPage++;
+                showPage(currentPage);
+            }
+        }
+
+        function prevPage() {
+            if (currentPage > 1) {
+                currentPage--;
+                showPage(currentPage);
+            }
+        }
+
+        function filterGallery(category) {
+            currentCategory = category;
+            currentPage = 1;
+            showPage(1);
+
+            const buttons = document.querySelectorAll('.btn-group button');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            buttons.forEach(btn => {
+                if (btn.textContent === (category.charAt(0).toUpperCase() + category.slice(1))) {
+                    btn.classList.add('active');
+                }
+            });
+        }
+
+        window.onload = () => showPage(1);
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/lightbox2@2.11.3/dist/js/lightbox.min.js"></script>
+</body>
+
+</html>
